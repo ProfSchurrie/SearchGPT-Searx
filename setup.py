@@ -13,7 +13,7 @@ setup(
     license="MIT",
     packages=find_packages(where="src"),  # Specify src as the root for packages
     package_dir={"": "src"},  # Tell setuptools to look for packages in src
-    install_requires=install_requires,  # Use dependencies from requirements.txt
+    install_requires=install_requires,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
