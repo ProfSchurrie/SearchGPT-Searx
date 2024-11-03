@@ -1,7 +1,7 @@
 import threading
 import time
-from web_crawler import WebScraper
-from searx_service import SearxClient  # Use SearxClient instead of SerperClient
+from SearchGPT_Searx.web_crawler import WebScraper
+from SearchGPT_Searx.searx_service import SearxClient  # Use SearxClient instead of SerperClient
 
 class WebContentFetcher:
     def __init__(self, query):

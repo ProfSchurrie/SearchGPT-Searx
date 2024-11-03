@@ -1,8 +1,8 @@
 import time
 import os
 import yaml
-from fetch_web_content import WebContentFetcher
-from retrieval import EmbeddingRetriever
+from SearchGPT_Searx.fetch_web_content import WebContentFetcher
+from SearchGPT_Searx.retrieval import EmbeddingRetriever
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.schema import HumanMessage
