@@ -1,6 +1,6 @@
 import yaml
 import os
-from fetch_web_content import WebContentFetcher
+from SearchGPT_Searx.fetch_web_content import WebContentFetcher
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
