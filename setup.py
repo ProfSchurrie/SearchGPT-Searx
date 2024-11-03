@@ -5,7 +5,7 @@ with open("requirements.txt") as f:
     install_requires = f.read().splitlines()
 
 setup(
-    name="SearchGPT-Searx",
+    name="SearchGPT_Searx",
     version="0.1",
     description="A modified version of SearchGPT using the Searx API",
     author="ProfSchurrie",
