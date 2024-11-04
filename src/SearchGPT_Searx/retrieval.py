@@ -1,4 +1,6 @@
-from fetch_web_content import WebContentFetcher
+import yaml
+import os
+from SearchGPT_Searx.fetch_web_content import WebContentFetcher
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
@@ -7,6 +9,10 @@ class EmbeddingRetriever:
     TOP_K = 10  # Number of top K documents to retrieve
 
     def __init__(self):
+        # Load configuration from config.yaml file
+        config_path = os.path.join(os.path.dirname(__file__), 'config', 'config.yaml')
+        with open(config_path, 'r') as file:
+            self.config = yaml.safe_load(file)
 
         # Initialize the text splitter
         self.text_splitter = RecursiveCharacterTextSplitter(
@@ -46,4 +52,4 @@ if __name__ == "__main__":
     relevant_docs_list = retriever.retrieve_embeddings(web_contents, serper_response['links'], query)
 
     print("\n\nRelevant Documents from VectorDB:\n", relevant_docs_list)
-    
+
