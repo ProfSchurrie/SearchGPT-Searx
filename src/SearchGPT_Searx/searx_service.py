@@ -2,7 +2,7 @@ import requests
 
 
 class SearxClient:
-    def __init__(self, instance_url="http://localhost:8888"):  # Local Searx instance URL
+    def __init__(self, instance_url):  # Local Searx instance URL
         self.instance_url = instance_url
 
     def search(self, query: str):
