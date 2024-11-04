@@ -7,6 +7,8 @@ if __name__ == "__main__":
     query = "Artificial Intelligence trends 2024"
     output_format = "" # User can specify output format
     profile = "" # User can define the role for LLM
+    model_name = "gpt-3.5-turbo-16k"
+    openai_api_key = ""
 
     # Fetch web content based on the query
     web_contents_fetcher = WebContentFetcher(query)
