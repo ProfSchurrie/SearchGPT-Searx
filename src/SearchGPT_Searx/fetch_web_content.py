@@ -40,9 +40,9 @@ class WebContentFetcher:
                 self.error_urls.append(url)
             print(f"Thread {thread_id}: Error crawling {url}: {e}")
 
-    def _searx_launcher(self):
+    def _searx_launcher(self, instance_url="http://localhost:8888"):
         # Function to launch the Searx client and get search results
-        searx_client = SearxClient()
+        searx_client = SearxClient(instance_url)
         searx_results = searx_client.search(self.query)
         return searx_client.extract_components(searx_results)
 
@@ -57,9 +57,9 @@ class WebContentFetcher:
         for thread in threads:
             thread.join()
 
-    def fetch(self):
+    def fetch(self, instance_url="http://localhost:8888"):
         # Main method to fetch web content based on the query
-        searx_response = self._searx_launcher()
+        searx_response = self._searx_launcher(instance_url)
         if searx_response:
             url_list = searx_response["links"]
             self._crawl_threads_launcher(url_list)
