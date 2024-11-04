@@ -9,11 +9,6 @@ class EmbeddingRetriever:
     TOP_K = 10  # Number of top K documents to retrieve
 
     def __init__(self):
-        # Load configuration from config.yaml file
-        config_path = os.path.join(os.path.dirname(__file__), 'config', 'config.yaml')
-        with open(config_path, 'r') as file:
-            self.config = yaml.safe_load(file)
-
         # Initialize the text splitter
         self.text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=1000,
